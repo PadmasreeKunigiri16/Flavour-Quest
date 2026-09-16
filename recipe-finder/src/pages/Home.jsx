@@ -5,6 +5,7 @@ import Loader from "../components/Loader";
 import "./Home.css";
 import RecipeModal from "../components/RecipeModal";
 import SearchBar from "../components/SearchBar";
+import { andhraRecipes } from "../data/andhraRecipes";
 const Home=({resetHome})=>{
   const [chickenRecipes,setChickenRecipes] = useState([]);
   const [soupRecipes, setSoupRecipes] = useState([]);
@@ -81,6 +82,15 @@ const Home=({resetHome})=>{
         <h2>Soup Recipes</h2>
         <div className="recipe-grid">
           {soupRecipes.map((r)=>(
+            <RecipeCard key={r.idMeal} recipe={r} onClick={setSelectedRecipe}/>
+          ))}
+        </div>
+      </div>
+      <div className="section">
+        <h2>🌶️ Andhra Pradesh Recipes</h2>
+        <p className="section-subtitle">Authentic Telugu cuisine — spicy, tangy &amp; full of flavour</p>
+        <div className="recipe-grid">
+          {andhraRecipes.map((r)=>(
             <RecipeCard key={r.idMeal} recipe={r} onClick={setSelectedRecipe}/>
           ))}
         </div>

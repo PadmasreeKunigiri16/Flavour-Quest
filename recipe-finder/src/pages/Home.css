@@ -20,3 +20,12 @@
     border-radius:8px;
     cursor:pointer;
 }
+.section-subtitle{
+    text-align: start;
+    margin: -0.5rem 0 0.5rem 20px;
+    font-size: 0.95rem;
+    color: #888;
+}
+body.dark .section-subtitle{
+    color: #aaa;
+}
