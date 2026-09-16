@@ -22,7 +22,14 @@ const RecipeModal=({recipe,onClose}) =>{
         </button>
         <div className="modal-body">
             <div className="modal-image">
-                <img src={recipe.strMealThumb} alt=""/>
+                <img
+                    src={recipe.strMealThumb || "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80"}
+                    alt={recipe.strMeal}
+                    onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80";
+                    }}
+                />
             </div>
             <div className="modal-details">
                 <h2>{recipe.strMeal}</h2>
@@ -54,13 +61,21 @@ const RecipeModal=({recipe,onClose}) =>{
                         </div>
                     )
                 }
-                {
-                    recipe.strYoutube && (
-                        <a href={recipe.strYoutube}
-                        target="_blank"
-                        className="youtube-link"> Watch on Youtube</a>
-                    )
-                }
+                {(() => {
+                    const videoUrl = (recipe.strYoutube && recipe.strYoutube.includes("watch?v="))
+                        ? recipe.strYoutube
+                        : `https://www.youtube.com/results?search_query=${encodeURIComponent(recipe.strMeal + " recipe telugu")}`;
+                    return (
+                        <a
+                            href={videoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="youtube-link"
+                        >
+                            ▶ Watch "{recipe.strMeal}" Recipe Video on YouTube
+                        </a>
+                    );
+                })()}
             </div>
         </div>
     </div>

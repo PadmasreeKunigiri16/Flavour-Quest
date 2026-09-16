@@ -36,8 +36,15 @@ const Home=({resetHome})=>{
     setSearchQuery(query);
     if(query.trim()==="") return;
     setLoading(true);
-    const results= await fetchRecipes(query);
-    setRecipes(results);
+    const apiResults = await fetchRecipes(query);
+    const qLower = query.toLowerCase().trim();
+    const localResults = andhraRecipes.filter((r) =>
+      r.strMeal.toLowerCase().includes(qLower) ||
+      (r.strCategory && r.strCategory.toLowerCase().includes(qLower)) ||
+      (r.strInstructions && r.strInstructions.toLowerCase().includes(qLower))
+    );
+    const combined = [...localResults, ...apiResults.filter(a => !localResults.some(l => l.idMeal === a.idMeal))];
+    setRecipes(combined);
     setLoading(false);
   };
   const clearSearch =()=>{
