@@ -73,7 +73,7 @@ const Home=({resetHome})=>{
         <h2>Chicken Recipes</h2>
         <div className="recipe-grid">
           {chickenRecipes.map((r)=>(
-            <RecipeCard key={r.idMeal} recipe={r} selected={setSelectedRecipe}/>
+            <RecipeCard key={r.idMeal} recipe={r} onClick={setSelectedRecipe}/>
           ))}
         </div>
       </div>
@@ -81,7 +81,7 @@ const Home=({resetHome})=>{
         <h2>Soup Recipes</h2>
         <div className="recipe-grid">
           {soupRecipes.map((r)=>(
-            <RecipeCard key={r.idMeal} recipe={r} selected={setSelectedRecipe}/>
+            <RecipeCard key={r.idMeal} recipe={r} onClick={setSelectedRecipe}/>
           ))}
         </div>
       </div>
@@ -89,7 +89,7 @@ const Home=({resetHome})=>{
         <h2>Explore All Recipes</h2>
         <div className="recipe-grid">
           {exploreAll.slice(0,visibleCount).map((r)=>(
-            <RecipeCard key={r.idMeal} recipe={r} selected={setSelectedRecipe}/>
+            <RecipeCard key={r.idMeal} recipe={r} onClick={setSelectedRecipe}/>
           ))}
         </div>
         {

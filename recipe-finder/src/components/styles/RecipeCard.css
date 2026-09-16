@@ -7,8 +7,9 @@
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     transition: transform 0.2s ease;
 }
-body.dark.recipe-card{
+body.dark .recipe-card{
     background: #2b2b2b;
+    color: #fff;
 }
 .recipe-card:hover{
     transform: scale(1.05);

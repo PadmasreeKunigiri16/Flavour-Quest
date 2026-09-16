@@ -137,4 +137,23 @@
    .youtube-link:hover{
     background: #cc0000;
    }
-    
+
+/* ── Dark mode overrides ── */
+body.dark .modal-full{
+    background: #2b2b2b;
+}
+body.dark .modal-image{
+    background: #222;
+}
+body.dark .modal-details{
+    color: #e0e0e0;
+}
+body.dark .modal-details h2{
+    color: #fff;
+}
+body.dark .instructions h3{
+    color: #ddd;
+}
+body.dark .instructions li{
+    color: #ccc;
+}

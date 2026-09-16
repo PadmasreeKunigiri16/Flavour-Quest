@@ -17,7 +17,7 @@ const SearchBar = ({onSearch,onClear})=>{
             value={query}
             onChange={(e)=> setQuery(e.target.value)}
             />
-            <button className="btn1" type="button">Search</button>
+            <button className="btn1" type="submit">Search</button>
             {
                 query &&(
                     <button type="button" className="clear-btn" onClick={handleClear}>x</button>
