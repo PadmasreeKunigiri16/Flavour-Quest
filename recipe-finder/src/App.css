@@ -1,11 +1,2 @@
-body{
-  font-family:sans-serif;
-  margin:0;
-  background: #f5f5f5;
-  color:#333;
-  transition:all 0.3s ease;
-}
-body.dark{
-  background: #1e1e1e;
-  color:#fff;
-}
+/* App-level styles are handled by index.css design tokens.
+   This file intentionally kept minimal. */

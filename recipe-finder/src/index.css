@@ -1,0 +1,71 @@
+/* ── Global Reset & Design System ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary:       #ff6b35;
+  --primary-dark:  #e55a25;
+  --secondary:     #e52e71;
+  --accent:        #ffd166;
+  --bg:            #f8f5f0;
+  --surface:       #ffffff;
+  --surface2:      #f0ece6;
+  --text:          #1a1a1a;
+  --text-muted:    #6b6b6b;
+  --border:        #e0d8cf;
+  --shadow-sm:     0 2px 8px rgba(0,0,0,0.08);
+  --shadow-md:     0 4px 20px rgba(0,0,0,0.12);
+  --shadow-lg:     0 8px 40px rgba(0,0,0,0.18);
+  --radius-sm:     8px;
+  --radius-md:     14px;
+  --radius-lg:     22px;
+  --transition:    0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --navbar-h:      68px;
+  --font-body:     'Inter', sans-serif;
+  --font-display:  'Playfair Display', serif;
+}
+
+body.dark {
+  --bg:          #0f0f0f;
+  --surface:     #1c1c1e;
+  --surface2:    #2c2c2e;
+  --text:        #f2f2f7;
+  --text-muted:  #8e8e93;
+  --border:      #3a3a3c;
+  --shadow-sm:   0 2px 8px rgba(0,0,0,0.4);
+  --shadow-md:   0 4px 20px rgba(0,0,0,0.5);
+  --shadow-lg:   0 8px 40px rgba(0,0,0,0.6);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  transition: background var(--transition), color var(--transition);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: var(--font-body);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--primary); }
